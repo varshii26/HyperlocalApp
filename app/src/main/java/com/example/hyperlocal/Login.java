@@ -32,6 +32,8 @@ public class Login extends AppCompatActivity {
     FirebaseAuth fauth;
     ProgressBar pbar;
 
+    public static boolean disableCloseBtn = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,11 +99,22 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        closeBtn.setOnClickListener(new View.OnClickListener() {
+
+        /* .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
+            }
+        });
+
+         */
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                main2Intent();
             }
         });
 
@@ -149,6 +162,16 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void main2Intent(){
+        if (disableCloseBtn){
+            disableCloseBtn = false;
+        }else {
+            Intent main2Intent = new Intent(getApplicationContext(), Main2Activity.class);
+            startActivity(main2Intent);
+        }
 
     }
 }

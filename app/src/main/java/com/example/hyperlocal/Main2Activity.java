@@ -245,11 +245,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                     } else if (id == R.id.Account) {
 
                     } else if (id == R.id.SignOut) {
-                        FirebaseAuth.getInstance().signOut();
+                        /* FirebaseAuth.getInstance().signOut();
                         DBqueries.clearData();
                         Intent registerIntent = new Intent(Main2Activity.this, Register.class);
                         startActivity(registerIntent);
                         finish();
+
+                         */
                     }
                     drawer.removeDrawerListener(this);
                 }
@@ -261,7 +263,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         }
     }
 
-    private void setFragment(Fragment fragment, int fragmentNo) {
+  /*  private void setFragment(Fragment fragment, int fragmentNo) {
         if (fragmentNo != currentFragment) {
             if (fragmentNo == REWARDS_FRAGMENT) {
                 window.setStatusBarColor(Color.parseColor("#5B04B1"));
@@ -278,6 +280,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         }
     }
 
+
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -285,5 +289,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 || super.onSupportNavigateUp();
     }
 
+
+   */
 
 }

@@ -20,6 +20,10 @@ public class HorizontalProductAdapter extends RecyclerView.Adapter<HorizontalPro
         this.horizontalProductModelList = horizontalProductScrollModelList;
     }
 
+    public HorizontalProductAdapter() {
+
+    }
+
 
     @NonNull
     @Override

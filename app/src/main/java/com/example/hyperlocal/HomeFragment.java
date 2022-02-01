@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +64,14 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    //Horizontal product Layout
+
+    private TextView horizontallayoutTitle;
+    private Button horizontalLayoutViewAllBtn;
+    private RecyclerView horizontalRecyclerView;
+
+    //////
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,6 +97,28 @@ public class HomeFragment extends Fragment {
         categoryRecyclerView.setAdapter(categoryAdapter);
         categoryAdapter.notifyDataSetChanged();
 
+        horizontallayoutTitle = view.findViewById(R.id.horizontalLayoutTitle);
+        horizontalLayoutViewAllBtn = view.findViewById(R.id.viewAllButton);
+        horizontalRecyclerView = view.findViewById(R.id.horizontalRecyclerView);
+
+        List<HorizontalProductModel> horizontalProductModelList = new ArrayList<>();
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+        horizontalProductModelList.add(new HorizontalProductModel(R.drawable.image3,"Redmi Note 8 Pro","MediaTek Helio G90T","Rs. 12999/-"));
+
+        HorizontalProductAdapter horizontalProductAdapter = new HorizontalProductAdapter(horizontalProductModelList);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        horizontalRecyclerView.setLayoutManager(linearLayoutManager);
+
+        horizontalRecyclerView.setAdapter(horizontalProductAdapter);
+        horizontalProductAdapter.notifyDataSetChanged();
         return view;
     }
 }
