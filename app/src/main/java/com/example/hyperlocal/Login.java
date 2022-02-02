@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(
                                     Login.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Main2Activity.class));
 
                         } else {
                             Toast.makeText(Login.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -113,8 +113,8 @@ public class Login extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
-                main2Intent();
+                Intent goToNextActivity = new Intent(getApplicationContext(), Main2Activity.class);
+                startActivity(goToNextActivity);
             }
         });
 
